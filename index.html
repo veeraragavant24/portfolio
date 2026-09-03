@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Portfolio</title>
+
+    <link rel="stylesheet" href="styleport.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+
+            <div class="logo">
+                <span>P</span> Portfolio
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#form">Form</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+     <!-- Portfolio / Home -->
+    <section id="home" class="home">
+
+        <div class="home-content">
+            <p class="small-title">WELCOME TO MY</p>
+
+            <h1>PORTFOLIO</h1>
+
+            <p>
+                Creative Developer & Web Designer
+            </p>
+
+            <a href="#about" class="btn">Explore My Work</a>
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section id="about" class="about">
+
+        <div class="section-title">
+            <h2>ABOUT YOU</h2>
+        </div>
+
+        <div class="about-content">
+
+            <div class="about-image">
+                <div class="image-box">
+                    <img src="veera image.jpg">
+                </div>
+            </div>
+
+            <div class="about-text">
+                <h2>Hello, I'm a Developer</h2>
+
+                <p>
+                    I am a passionate IT professional interested in
+                    web development, software development and modern
+                    technologies.
+                </p>
+
+                <p>
+                    I enjoy creating clean, responsive and user-friendly
+                    websites with creative designs.
+                </p>
+
+                <a href="#services" class="btn">My Services</a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Services -->
+    <section id="services" class="services">
+
+        <div class="section-title">
+            <h2>SERVICE</h2>
+        </div>
+
+        <div class="service-container">
+
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Web Development</h3>
+                <p>
+                    Creating responsive and modern websites.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Web Design</h3>
+                <p>
+                    Designing attractive and user-friendly interfaces.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"></div>
+                <h3>Programming</h3>
+                <p>
+                    Developing efficient software solutions.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Form -->
+    <section id="form" class="form-section">
+
+        <div class="section-title">
+            <h2>FORM</h2>
+        </div>
+
+        <div class="form-container">
+
+          <form action="contact.php" method="POST">
+
+    <input type="text" name="name" placeholder="Your Name">
+
+    <input type="email" name="email" placeholder="Your Email">
+
+    <input type="text" name="phone" placeholder="Your Phone">
+
+    <textarea name="message" placeholder="Your Message"></textarea>
+
+    <button type="submit">Submit</button>
+
+
+
+</form>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+
+        <div class="section-title">
+            <h2>CONTACT</h2>
+        </div>
+
+        <div class="contact-container">
+
+            <div class="contact-item">
+                <h3>Email</h3>
+                <p>veeraragavant861@gmail.com</p>
+            </div>
+
+            <div class="contact-item">
+                <h3>Phone</h3>
+                <p>+91 9626631839</p>
+            </div>
+            <div class="contact-item">
+                <h3>LinkedIN</h3>
+                <P><a href="https://www.linkedin.com/in/veeraragavan-t-b43369376?utm_source=share_via&utm_content=profile&utm_medium=member_android">Click Here</a>
+                </P>
+            </div>
+
+            <div class="contact-item">
+                <h3>Location</h3>
+                <p>India</p>
+            </div>
+
+        </div>
+
+    </section>
+    <script>
+        // ================================
+// ACTIVE NAVIGATION ON SCROLL
+// ================================
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+
+    let currentSection = "";
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 150;
+        const sectionHeight = section.clientHeight;
+
+        if (window.scrollY >= sectionTop &&
+            window.scrollY < sectionTop + sectionHeight) {
+
+            currentSection = section.getAttribute("id");
+        }
+
+    });
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" + currentSection) {
+            link.classList.add("active");
+        }
+
+    });
+
+});
+    </script>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 My Portfolio. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
