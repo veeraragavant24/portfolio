@@ -4,10 +4,12 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 // Load private email configuration
-$config = require __DIR__ . '/config.local.php';
+$mailUsername = getenv('MAIL_USERNAME');
+$mailPassword = getenv('MAIL_PASSWORD');
 
-$mailUsername = $config['veeraragavant571@gmail.com'];
-$mailPassword = $config['wxgs knip eozl kyrf'];
+if (!$mailUsername || !$mailPassword) {
+    die("Mail configuration is missing.");
+}
 
 // Load PHPMailer
 require __DIR__ . '/vendor/autoload.php';
